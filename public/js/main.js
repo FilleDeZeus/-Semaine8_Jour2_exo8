@@ -22,14 +22,27 @@ for (let i = 0; i < div.length; i++){
 
 
 //EXERCICE 3
-let prop = ['border: 1px solid gold;','background-color: blue;','background-color: red;','border: 5px dotted gold;'];
 
-let input = document.getElementsByTagName("input")[0]
-
-input.onclick = function () {
-    let hasard = Math.floor(Math.random()*prop.length);
-
-    for(let i = 0; i < div.length; i++){
-        div[i].classList = prop[hasard];
-    }
+let style = {
+    bd: "border: 1px solid gold",
+    bc1: "background-color:blue",
+    bc2: "color: red"
 }
+
+
+
+
+let btnGo = document.getElementsByTagName("input")[0]
+btnGo.addEventListener("click",()=>{
+  
+    let tabs = [style.bd,style.bc1,style.bc2]
+    let randomi = (tabs[Math.floor(Math.random() * tabs.length )])
+    
+
+
+    console.log(randomi);
+
+        let p = document.querySelector('p')
+        p.style=randomi
+
+})
